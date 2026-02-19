@@ -1,0 +1,10 @@
+{
+  "id": "openclaw-tavern-chat",
+  "name": "Tavern-chat",
+  "description": "Manage character cards, worldbooks, and regex rules through chat commands and API.\n通过聊天命令和 API 管理角色卡、世界书与正则规则。",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

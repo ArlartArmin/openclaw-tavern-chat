@@ -1,0 +1,12 @@
+{
+  "name": "openclaw-tavern-chat",
+  "version": "2026.2.20",
+  "description": "Manage character cards, worldbooks, and regex rules through chat commands and API.\n通过聊天命令和 API 管理角色卡、世界书与正则规则。",
+  "type": "module",
+  "devDependencies": {
+    "openclaw": "workspace:*"
+  },
+  "openclaw": {
+    "extensions": ["./index.ts"]
+  }
+}
