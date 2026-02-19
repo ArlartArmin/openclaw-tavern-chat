@@ -1,6 +1,6 @@
-# openclaw-tavern-chat
+﻿# openclaw-tavern-chat
 
-[English](./README.en.md) | [中文](./README.zh.md)
+[English](./README.md) | [中文](./README.zh.md)
 
 An OpenClaw plugin for managing character cards, worldbooks, and regex rules through chat commands.
 
@@ -80,3 +80,4 @@ Send files directly in chat for auto-import:
 ## License
 
 MIT
+

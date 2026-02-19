@@ -1,6 +1,6 @@
-# openclaw-tavern-chat
+﻿# openclaw-tavern-chat
 
-[English](./README.en.md) | [中文](./README.zh.md)
+[English](./README.md) | [中文](./README.zh.md)
 
 OpenClaw 插件，通过聊天命令管理角色卡、世界书和正则规则。
 
@@ -86,3 +86,4 @@ openclaw plugins update openclaw-tavern-chat
 ## 许可证
 
 MIT
+
