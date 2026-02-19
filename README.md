@@ -78,6 +78,7 @@ Send files directly in chat for auto-import:
 
 - PNG: Detects embedded character data (tEXt/iTXt `chara` chunk) and imports to `characters/`.
 - JSON: Auto-detects worldbook or regex rules and imports accordingly. Worldbooks are auto-activated for the current session.
+- Note: Some channels may not respond to image messages. If a character card PNG is not recognized, send it as a file/document attachment instead of an image message.
 
 ---
 
@@ -161,6 +162,7 @@ openclaw plugins update openclaw-tavern-chat
 
 - PNG 文件：检测是否包含角色卡数据（tEXt/iTXt `chara` chunk），有则导入到 `characters/` 目录。
 - JSON 文件：自动判断是世界书还是正则规则文件并导入，世界书会自动切换到当前会话。
+- 注意：某些渠道对图片消息可能没有反应。若角色卡 PNG 未被识别，请用“文件/文档附件”方式发送，不要用图片消息发送。
 
 ## License
 
