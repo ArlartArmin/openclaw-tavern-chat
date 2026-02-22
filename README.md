@@ -51,6 +51,11 @@ Character cards, worldbooks, and regex rules are stored under the OpenClaw state
 | `/character set <filename\|name>` | Switch character card |
 | `/character show` | Show current character card |
 | `/character clear` | Clear current character card |
+| `/character mode <full\|minimal>` | Switch injection mode |
+
+**Injection modes:**
+- `full` (default): Inject all fields including scenario, first_message, example_dialogue
+- `minimal`: Inject only core persona, without opener and scenario
 
 ### Worldbooks
 
@@ -79,6 +84,33 @@ Send files directly in chat for auto-import:
 - PNG: Detects embedded character data (tEXt/iTXt `chara` chunk) and imports to `characters/`.
 - JSON: Auto-detects worldbook or regex rules and imports accordingly. Worldbooks are auto-activated for the current session.
 - Note: Some channels may not respond to image messages. If a character card PNG is not recognized, send it as a file/document attachment instead of an image message.
+
+## MiniMax TTS (Voice Synthesis)
+
+Add to `openclaw.json5` under `plugins`:
+
+```json5
+{
+  plugins: {
+    "openclaw-tavern-chat": {
+      minimaxTts: {
+        enabled: true,
+        apiToken: "your-minimax-api-token",  // or set MINIMAX_API_TOKEN env var
+        voiceId: "female-shaonv-jingpin",    // optional, change voice
+      },
+    },
+  },
+}
+```
+
+Chat commands to control TTS read-aloud:
+
+| Command | Description |
+|---------|-------------|
+| `/tavern-tts on` or `开启朗读` | Enable TTS read-aloud prompt |
+| `/tavern-tts off` or `关闭朗读` | Disable TTS read-aloud prompt |
+| `/tavern-tts status` or `朗读状态` | Show TTS status |
+| `/minimax-tts <text>` | Test voice synthesis |
 
 ---
 
@@ -132,6 +164,11 @@ openclaw plugins update openclaw-tavern-chat
 | `/character set <filename\|name>` | 切换角色卡 |
 | `/character show` | 查看当前角色卡 |
 | `/character clear` | 清空角色卡 |
+| `/character mode <full\|minimal>` | 切换注入模式 |
+
+**角色卡注入模式：**
+- `full`（默认）：注入全部字段，含 scenario、first_message、example_dialogue
+- `minimal`：只注入核心人设，不注入开场白与场景等
 
 #### 世界书
 
@@ -162,7 +199,34 @@ openclaw plugins update openclaw-tavern-chat
 
 - PNG 文件：检测是否包含角色卡数据（tEXt/iTXt `chara` chunk），有则导入到 `characters/` 目录。
 - JSON 文件：自动判断是世界书还是正则规则文件并导入，世界书会自动切换到当前会话。
-- 注意：某些渠道对图片消息可能没有反应。若角色卡 PNG 未被识别，请用“文件/文档附件”方式发送，不要用图片消息发送。
+- 注意：某些渠道对图片消息可能没有反应。若角色卡 PNG 未被识别，请用"文件/文档附件"方式发送，不要用图片消息发送。
+
+### MiniMax TTS（语音合成）
+
+在 `openclaw.json5` 的 `plugins` 中添加配置：
+
+```json5
+{
+  plugins: {
+    "openclaw-tavern-chat": {
+      minimaxTts: {
+        enabled: true,
+        apiToken: "your-minimax-api-token",  // 或设置环境变量 MINIMAX_API_TOKEN
+        voiceId: "female-shaonv-jingpin",    // 可选，更换音色
+      },
+    },
+  },
+}
+```
+
+语音朗读控制命令：
+
+| 命令 | 说明 |
+|------|------|
+| `/tavern-tts on` 或 `开启朗读` | 开启语音朗读提示 |
+| `/tavern-tts off` 或 `关闭朗读` | 关闭语音朗读提示 |
+| `/tavern-tts status` 或 `朗读状态` | 查看语音状态 |
+| `/minimax-tts <文本>` | 测试语音合成 |
 
 ## License
 
